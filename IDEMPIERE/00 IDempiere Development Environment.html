@@ -1,0 +1,109 @@
+<h1 id="setting-up-idempiere-customization-development-environment">Setting Up iDempiere Customization Development Environment</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Operating System: Windows/Linux/macOS</li>
+<li>Java Development Kit (JDK) 11 or higher</li>
+<li>Eclipse IDE + DBeaver Plugin</li>
+<li>PostgreSQL database</li>
+<li>Git</li>
+</ul>
+<hr>
+<h2 id="steps">Steps</h2>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#steps">Steps</a>
+<ul>
+<li><a href="#1-install-java-development-kit-jdk">1. <strong>Install Java Development Kit (JDK)</strong>:</a></li>
+<li><a href="#2-install-eclipse-ide">2. <strong>Install Eclipse IDE</strong>:</a></li>
+<li><a href="#3-set-up-postgresql">3. <strong>Set up PostgreSQL</strong>:</a></li>
+<li><a href="#4-clone-idempiere-repository">4. <strong>Clone iDempiere Repository</strong>:</a></li>
+<li><a href="#5-import-idempiere-projects-into-eclipse">5. <strong>Import iDempiere Projects into Eclipse</strong>:</a></li>
+<li><a href="#6-set-up-database-connection-in-eclipse">6. <strong>Set up Database Connection in Eclipse</strong>:</a></li>
+<li><a href="#7-build-idempiere-projects">7. <strong>Build iDempiere Projects</strong>:</a></li>
+<li><a href="#8-run-idempiere-server">8. <strong>Run iDempiere Server</strong>:</a></li>
+<li><a href="#9-start-customization-development">9. <strong>Start Customization Development</strong>:</a></li>
+<li><a href="#10-version-control">10. <strong>Version Control</strong>:</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<hr>
+<h3 id="1-install-java-development-kit-jdk">1. <strong>Install Java Development Kit (JDK)</strong>:</h3>
+<ul>
+<li>Download and install JDK from the official Oracle website or use a package manager like <code>apt</code>, <code>brew</code>, or <code>yum</code>.</li>
+<li>Set the JAVA_HOME environment variable to the JDK installation directory.</li>
+<li>Visit <a href="%5Bhttps://%5D(https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.zip)">Oracle Website for downloading</a></li>
+</ul>
+<h3 id="2-install-eclipse-ide">2. <strong>Install Eclipse IDE</strong>:</h3>
+<ul>
+<li>Download Eclipse IDE for Java EE Developers from the official website. Visit <a href="http://Eclipse.org">Eclipse.org</a> for downloading Eclipse Java EE Developer 2023-12 version. <a href="%5Bhttps://%5D(https://mirror.kakao.com/eclipse/technology/epp/downloads/release/2023-12/R/eclipse-jee-2023-12-R-win32-x86_64.zip)">Eclipse.org</a></li>
+<li>Extract the downloaded archive and run Eclipse.</li>
+</ul>
+<h3 id="3-set-up-postgresql">3. <strong>Set up PostgreSQL</strong>:</h3>
+<ul>
+<li>Download and install PostgreSQL database from the official website <a href="%5Bhttps://%5D(https://get.enterprisedb.com/postgresql/postgresql-15.6-1-windows-x64.exe)">PostgreSQL Website</a>.</li>
+<li>Configure PostgreSQL by creating a new database and user for iDempiere.</li>
+<li>Note down the database name, username, and password for later use.</li>
+</ul>
+<h3 id="4-clone-idempiere-repository">4. <strong>Clone iDempiere Repository</strong>:</h3>
+<ul>
+<li>Open terminal/command prompt.</li>
+<li>Navigate to the directory where you want to store iDempiere source code.</li>
+<li>Execute the following command to clone the iDempiere repository:<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/idempiere/idempiere.git
+</code></pre>
+</li>
+</ul>
+<p><img src="file:////run/media/widi/comp/widi/upnvj/2324/GENAP/PENUNJANG/PT_SISI/INKUBASI_PROJECT/IDEMPIERE/assets/image.png" alt="alt text"></p>
+<h3 id="5-import-idempiere-projects-into-eclipse">5. <strong>Import iDempiere Projects into Eclipse</strong>:</h3>
+<ul>
+<li>Open Eclipse IDE.</li>
+<li>Go to File -&gt; Import -&gt; Existing Projects into Workspace.</li>
+<li>Browse to the directory where you cloned iDempiere repository and import the projects.</li>
+</ul>
+<p><img src="file:////run/media/widi/comp/widi/upnvj/2324/GENAP/PENUNJANG/PT_SISI/INKUBASI_PROJECT/IDEMPIERE/assets/image-2.png" alt="alt text"></p>
+<p><img src="file:////run/media/widi/comp/widi/upnvj/2324/GENAP/PENUNJANG/PT_SISI/INKUBASI_PROJECT/IDEMPIERE/assets/image-3.png" alt="alt text"></p>
+<p><img src="file:////run/media/widi/comp/widi/upnvj/2324/GENAP/PENUNJANG/PT_SISI/INKUBASI_PROJECT/IDEMPIERE/assets/image-4.png" alt="alt text"></p>
+<hr>
+<h3 id="6-set-up-database-connection-in-eclipse">6. <strong>Set up Database Connection in Eclipse</strong>:</h3>
+<ul>
+<li>In Eclipse, go to Window -&gt; Show View -&gt; Data Source Explorer.</li>
+<li>Right-click on Database Connections and select New.</li>
+<li>Choose PostgreSQL from the list and enter the database connection details (URL, username, password).</li>
+<li>Test the connection and save it.</li>
+<li>If using DBeaver, install DBeaver plugin by Update site URL: <a href="https://dbeaver.io/update/latest/">https://dbeaver.io/update/latest/</a> (Multiplatform) go to Help -&gt; Eclipse Marketplace -&gt; put <code>dbeaver</code> as search key, after shown in list, click <code>Install</code> and <code>Finish</code>.</li>
+</ul>
+<p><img src="file:////run/media/widi/comp/widi/upnvj/2324/GENAP/PENUNJANG/PT_SISI/INKUBASI_PROJECT/IDEMPIERE/image-1.png" alt="alt text" width="60%" height="50%"></p>
+<hr>
+<h3 id="7-build-idempiere-projects">7. <strong>Build iDempiere Projects</strong>:</h3>
+<ul>
+<li>Right-click on the iDempiere project in Eclipse.</li>
+<li>Select Run As -&gt; Maven build.</li>
+<li>In the goals field, enter <code>install</code> and click Run.</li>
+<li>When there are errors, use target platform for IDempiere project. Open project <code>org.idempiere.p1.targetplatform</code>, click on file <code>org.idempiere.p2.targetplatform.target</code> will show following editor, and click <code>Set as Target Platform</code> link in right-upper corner.</li>
+<li></li>
+</ul>
+<p><img src="file:////run/media/widi/comp/widi/upnvj/2324/GENAP/PENUNJANG/PT_SISI/INKUBASI_PROJECT/IDEMPIERE/assets/image-5.png" alt="alt text"></p>
+<hr>
+<h3 id="8-run-idempiere-server">8. <strong>Run iDempiere Server</strong>:</h3>
+<ul>
+<li>Navigate to the directory where iDempiere is cloned.</li>
+<li>Run the following command to start the server:<pre><code class="language-bash">./idempiere-server/startup.sh
+</code></pre>
+</li>
+<li>Access iDempiere application via web browser using the configured URL (usually <a href="http://localhost:8080">http://localhost:8080</a>).</li>
+</ul>
+<hr>
+<h3 id="9-start-customization-development">9. <strong>Start Customization Development</strong>:</h3>
+<ul>
+<li>Now you have a running iDempiere instance and can start developing customizations.</li>
+<li>Use Eclipse for coding, debugging, and testing your customizations.</li>
+<li>Deploy your customizations to the running iDempiere server for testing.</li>
+</ul>
+<hr>
+<h3 id="10-version-control">10. <strong>Version Control</strong>:</h3>
+<pre><code>- Use Git for version control of your customization code.
+- Commit changes regularly and push them to your repository.
+</code></pre>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>You now have a fully functional development environment set up for iDempiere customization. Start developing and enhancing iDempiere according to your project requirements.</p>

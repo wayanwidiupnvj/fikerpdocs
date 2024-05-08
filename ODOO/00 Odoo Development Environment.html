@@ -1,0 +1,116 @@
+<h1 id="setting-up-odoo-customization-development-environment">Setting Up Odoo Customization Development Environment</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Operating System: Windows/Linux/macOS</li>
+<li>Python 3</li>
+<li>PostgreSQL database</li>
+<li>Git</li>
+</ul>
+<h2 id="steps">Steps</h2>
+<ol>
+<li>
+<p><strong>Install Python 3</strong>:</p>
+<ul>
+<li>Download and install Python 3 from the official website or use a package manager like <code>apt</code>, <code>brew</code>, or <code>yum</code>.</li>
+<li>Ensure that Python 3 is added to the system PATH.</li>
+</ul>
+</li>
+<li>
+<p><strong>Install PostgreSQL</strong>:</p>
+<ul>
+<li>Download and install PostgreSQL database from the official website.</li>
+<li>During installation, note down the username, password, and database name for Odoo.</li>
+</ul>
+</li>
+<li>
+<p><strong>Install Git</strong>:</p>
+<ul>
+<li>Download and install Git from the official website or use a package manager.</li>
+<li>Git will be used to clone the Odoo source code repository.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clone Odoo Repository</strong>:</p>
+<ul>
+<li>Open terminal/command prompt.</li>
+<li>Navigate to the directory where you want to store Odoo source code.</li>
+<li>Execute the following command to clone the Odoo repository:<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/odoo/odoo.git
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Create Virtual Environment</strong>:</p>
+<ul>
+<li>Navigate to the directory where Odoo repository is cloned.</li>
+<li>Create a virtual environment using Python 3:<pre><code class="language-bash">python3 -m venv odoo-venv
+</code></pre>
+</li>
+<li>Activate the virtual environment:
+<ul>
+<li>On Windows:<pre><code class="language-bash">odoo-venv\Scripts\activate
+</code></pre>
+</li>
+<li>On Linux/macOS:<pre><code class="language-bash"><span class="hljs-built_in">source</span> odoo-venv/bin/activate
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Install Odoo Dependencies</strong>:</p>
+<ul>
+<li>Inside the activated virtual environment, install Odoo dependencies using pip:<pre><code class="language-bash">pip install -r requirements.txt
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure Odoo</strong>:</p>
+<ul>
+<li>Create a configuration file for Odoo:
+<ul>
+<li>Copy the <code>odoo.conf</code> file from the Odoo repository to a new location.</li>
+<li>Modify the configuration file as per your PostgreSQL database settings (database name, username, password, etc.).</li>
+<li>Optionally, configure other settings such as addons path, log level, etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Initialize Odoo Database</strong>:</p>
+<ul>
+<li>Ensure PostgreSQL server is running.</li>
+<li>Inside the activated virtual environment, run Odoo's database initialization command:<pre><code class="language-bash">./odoo-bin -c /path/to/your/odoo.conf -d your_database_name --init all
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Run Odoo Server</strong>:</p>
+<ul>
+<li>Inside the activated virtual environment, run the Odoo server:<pre><code class="language-bash">./odoo-bin -c /path/to/your/odoo.conf
+</code></pre>
+</li>
+<li>Access Odoo application via web browser using the configured URL (usually <a href="http://localhost:8069">http://localhost:8069</a>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Start Customization Development</strong>:</p>
+<ul>
+<li>Now you have a running Odoo instance and can start developing customizations.</li>
+<li>Use your favorite code editor or IDE for coding, debugging, and testing your customizations.</li>
+<li>Deploy your customizations to the running Odoo server for testing.</li>
+</ul>
+</li>
+<li>
+<p><strong>Version Control</strong>:</p>
+<ul>
+<li>Use Git for version control of your customization code.</li>
+<li>Commit changes regularly and push them to your repository.</li>
+</ul>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>You now have a fully functional development environment set up for Odoo customization from the source code. Start developing and enhancing Odoo according to your project requirements.</p>
